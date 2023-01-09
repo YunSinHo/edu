@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias alias="TendencyVO" type="com.docedu.web.user.vo.TendencyVO"/>
+		<typeAlias alias="SchoolmatchVO" type="com.docedu.web.user.vo.SchoolmatchVO"/>
+		<typeAlias alias="UserVO" type="com.docedu.web.user.vo.UserVO"/>
+		<typeAlias alias="ArrangmentVO" type="com.docedu.web.user.vo.ArrangementVO"/>
+		<typeAlias alias="WordpdfVO" type="com.docedu.web.user.vo.WordpdfVO"/>
+		<typeAlias alias="AdminVO" type="com.docedu.web.admin.vo.AdminVO"/>
+		<typeAlias alias="AdminworkVO" type="com.docedu.web.admin.vo.AdminworkVO"/>
+		<typeAlias alias="NoticeVO" type="com.docedu.web.admin.vo.NoticeVO"/>
+		<typeAlias alias="MaterialVO" type="com.docedu.web.admin.vo.MaterialVO"/>
+		<typeAlias alias="AcademyVO" type="com.docedu.web.admin.vo.AcademyVO"/>
+		<typeAlias alias="LectureVO" type="com.docedu.web.admin.vo.LectureVO"/>
+		<typeAlias alias="GrammarVO" type="com.docedu.web.admin.vo.GrammarVO"/>
+		<typeAlias alias="CarrotVO" type="com.docedu.web.admin.vo.CarrotVO"/>
+		<typeAlias alias="TransVO" type="com.docedu.web.admin.vo.TransVO"/>
+		<typeAlias alias="ImsiVO" type="com.docedu.web.user.vo.ImsiVO"/>
+		<typeAlias alias="WordcollectionVO" type="com.docedu.web.user.vo.WordcollectionVO"/>
+		<typeAlias alias="StudentVO" type="com.docedu.web.admin.vo.StudentVO"/>
+		<typeAlias alias="UpdatorVO" type="com.docedu.web.admin.vo.UpdatorVO"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mapper/UpdatorMapper.xml"/>
+		<mapper resource="mapper/UserMapper.xml"/>
+		<mapper resource="mapper/StudentMapper.xml"/>
+		<mapper resource="mapper/TendencyMapper.xml"/>
+		<mapper resource="mapper/SchoolmatchMapper.xml"/>
+		<mapper resource="mapper/ArrangementMapper.xml"/>
+		<mapper resource="mapper/WordpdfMapper.xml"/>
+		<mapper resource="mapper/AdminMapper.xml"/>
+		<mapper resource="mapper/AdminworkMapper.xml"/>
+		<mapper resource="mapper/AdminnoticeMapper.xml"/>
+		<mapper resource="mapper/AdminmaterialMapper.xml"/>
+		<mapper resource="mapper/AcademyMapper.xml"/>
+		<mapper resource="mapper/LectureMapper.xml"/>
+		<mapper resource="mapper/GrammarMapper.xml"/>
+		<mapper resource="mapper/CarrotMapper.xml"/>
+		<mapper resource="mapper/TransMapper.xml"/>
+		<mapper resource="mapper/ImsiMapper.xml"/>
+		<mapper resource="mapper/WordcollectionMapper.xml"/>
+	</mappers>
+</configuration>
