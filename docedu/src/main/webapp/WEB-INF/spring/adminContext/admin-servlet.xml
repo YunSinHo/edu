@@ -5,21 +5,53 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	 xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
-	
-	
-	<context:component-scan
-		base-package="com.docedu.web"></context:component-scan>
-	
-		
-	<bean id="viewResolver"
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+	<mvc:resources mapping="/resources/**" location="/resources/"/>
+	<mvc:annotation-driven />
+    <!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+    <bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/page/admin/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	<context:component-scan
+		base-package="com.docedu.web"></context:component-scan>
+
+    <util:properties id="EXAMPLE_CONFIG">
+        <!-- 링크아이디 -->
+        <prop key="LinkID">TESTER</prop>
+        <!-- 비밀키 -->
+        <prop key="SecretKey">SwWxqU+0TErBXy/9TVjIPEnI0VTUMMSQZtJf3Ed8q3I=</prop>
+        <!-- 연동환경 설정값 true(개발용), false(상업용) -->
+        <prop key="IsTest">true</prop>
+        <!-- 인증토큰 아이피 제한 기능 사용여부 권장(true) -->
+        <prop key="IsIPRestrictOnOff">true</prop>
+        <!-- 팝빌 API 서비스 고정 IP 사용여부, true-사용, false-미사용, 기본값(false) -->
+        <prop key="UseStaticIP">false</prop>
+        <!-- 로컬시스템 시간 사용여부 true-사용(기본값-권장), false-미사용 -->
+        <prop key="UseLocalTimeYN">true</prop>
+    </util:properties>
+
+    <beans>
+        <!-- 문자 Service Implementation Bean registration.  -->
+        <bean id="messageService" class="com.popbill.api.message.MessageServiceImp">
+    
+            <property name="linkID" value="#{EXAMPLE_CONFIG.LinkID}"/>
+            <property name="secretKey" value="#{EXAMPLE_CONFIG.SecretKey}"/>
+            <property name="test" value="#{EXAMPLE_CONFIG.IsTest}"/>
+            <property name="IPRestrictOnOff" value="#{EXAMPLE_CONFIG.IsIPRestrictOnOff}"/>
+            <property name="useStaticIP" value="#{EXAMPLE_CONFIG.UseStaticIP}"/>
+            <property name="useLocalTimeYN" value="#{EXAMPLE_CONFIG.UseLocalTimeYN}"/>
+        </bean>
+    </beans>
 	
-	<mvc:annotation-driven />
+	
+		
+	
+	
 
 </beans>

@@ -7,6 +7,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="resources/js/admin/img.js"></script>
+<script src="resources/js/admin/html2canvas.min.js"></script>
+<script src="resources/js/admin/jquery.min.js"></script>
 </head>
 <style>
 body{
@@ -16,7 +20,7 @@ img{
 	width:100%;
 	vertical-align:middle;
 }
-.card-body{
+#card-body{
 	position:relative !important;
 	padding:0 !important;
 }
@@ -186,8 +190,34 @@ img{
     word-break: break-all;
 }
 </style>
+<script>
+  $(function(){
+    $("#shot").on("click", function(){
+			// 캡쳐 라이브러리를 통해서 canvas 오브젝트를 받고 이미지 파일로 리턴한다.
+      html2canvas(document.querySelector("#capture")).then(canvas => {
+				saveAs(canvas.toDataURL('image/png'),"capture-test.png");
+			});
+    });
+    function saveAs(uri, filename) { 
+			// 캡쳐된 파일을 이미지 파일로 내보낸다.
+      var link = document.createElement('a'); 
+      if (typeof link.download === 'string') { 
+        link.href = uri; 
+        link.download = filename; 
+        document.body.appendChild(link); 
+        link.click(); 
+        document.body.removeChild(link); 
+      } else { 
+        window.open(uri); 
+      } 
+    }
+  });
+</script>
 <body>
-	<div class="card-body">
+ <button class="shot">이미지저장</button>
+ <button onclick="history.go(-1);">뒤로가기</button>
+<form name="frm">
+	<div id="card-body" >
 		<img class="mainheaderimg1" alt="img1" src="resources/img/admin/carrot3.png">
         <div class="dayarea">${carrot_view.carrot_date}</div>
         <div class="classarea">${carrot_view.carrot_class}</div>
@@ -205,5 +235,21 @@ img{
         <div class="perfectioncheck">${carrot_view.carrot_perfection}</div>
         <div class="resultarea"><p class="resultbox">${carrot_view.carrot_result}</p></div>
     </div>
+    <input type="hidden" name="imgg" id="imgg" class="imgg" value="${carrot_view.carrot_seq}">
+    </form>
+   
+    <script>
+$(function(){
+    $(".shot").click(function(e){
+        html2canvas(document.getElementById("card-body")).then(function(canvas) {
+        	var theForm = document.frm;
+            var el = document.createElement("a")
+            el.href = canvas.toDataURL("image/jpeg")
+            el.download =theForm.imgg.value+'.jpg' //다운로드 할 파일명 설정
+            el.click()
+        })
+    })
+})
+</script>
 </body>
 </html>

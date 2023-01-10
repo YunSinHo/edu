@@ -14,7 +14,12 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 	<dependencies>
-		
+	<!-- 문자서비스 팝빌 -->
+		<dependency>
+    <groupId>kr.co.linkhub</groupId>
+    <artifactId>popbill-sdk</artifactId>
+    <version>1.57.1</version>
+</dependency>
 		<!-- Mysql -->
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>

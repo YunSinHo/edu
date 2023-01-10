@@ -5,6 +5,45 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ko">
 <head>
+<script src="resources/js/admin/jquery.min.js"></script>
+    <script src="resources/js/admin/bootstrap.bundle.min.js"></script>
+    <script src="resources/js/admin/jquery.easing.min.js"></script>
+    <script src="resources/js/admin/sb-admin-2.min.js"></script>
+    <script src="resources/air-datepicker/dist/js/datepicker.js"></script> 
+    <script src="resources/air-datepicker/dist/js/i18n/datepicker.ko.js"></script> <!-- 달력 한글 추가를 위해 커스텀 --> 
+<script type="text/javascript">
+        
+        function capture() {
+ 
+            html2canvas($(".CarrotVO"), {
+                  onrendered: function(canvas) {
+                    //document.body.appendChild(canvas);
+                    //alert(canvas.toDataURL("image/png"));
+                    
+                    $("#imgSrc").val(canvas.toDataURL("image/png"));
+                    
+                    $.ajax({
+                        type:     "post",
+                        data : $("form").serialize(),
+                        url:     /imageCreate.ajax",
+                        error: function(a, b, c){        
+                            alert("fail!!");
+                        },
+                        success: function (data) {
+                            try{
+                                
+                            }catch(e){                
+                                alert('server Error!!');
+                            }
+                        }
+                    });
+                  }
+            
+            
+            });
+ 
+        }     
+   </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -540,19 +579,22 @@
 
                 </nav>
                 <!-- End of Topbar -->
-
+	
                 <!-- Begin Page Content -->
               <div class="container-fluid">
                     <!-- Content Row -->
                     <div class="row">
                         <div class="col-xl-12 col-lg-7">
                             <!-- Basic Card Example -->
+                           
                             <form id="form1" name="CarrotVO" method="POST" action="updateCarrot.mdo">
+                             <input type="hidden" name="imgSrc" id="imgSrc" />
                             <input type="hidden" name="carrot_number1" value="${carrot_view.carrot_number}">
                             <input type="hidden" name="carrot_seq" value="${carrot_view.carrot_seq}">
 	                            <div class="card shadow mb-4">
 	                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 	                                    <h4 class="m-0 font-weight-bold text-primary">CARROT library</h4>
+<input type="button" value="이미지저장" onclick="location.href='carrotview.do?carrot_seq=${carrot_view.carrot_seq}'">
 	                                    <input type="submit" class="shadow-sm bg-body rounded" id="" value="수정하기">
 	                                    <input type="button" value="뒤로가기" onclick="history.go(-1)">
 	                                    수정인:<input type="text" name="updator_name" value="${updatorList.updator_name}" readonly>
@@ -850,17 +892,7 @@
             });
         });
     </script>
-     <script src="resources/js/admin/jquery.min.js"></script>
-    <script src="resources/js/admin/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="resources/js/admin/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="resources/js/admin/sb-admin-2.min.js"></script>
-
-    <script src="resources/air-datepicker/dist/js/datepicker.js"></script> <!-- Air datepicker js -->
-    <script src="resources/air-datepicker/dist/js/i18n/datepicker.ko.js"></script> <!-- 달력 한글 추가를 위해 커스텀 -->
+     
     <script>
         $("#datepicker").datepicker({
             language: 'ko'

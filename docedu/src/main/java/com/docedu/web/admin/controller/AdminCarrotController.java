@@ -68,10 +68,14 @@ public class AdminCarrotController {
 		AdminVO adminVO=(AdminVO)session.getAttribute("admin");
 		if(adminVO==null)return "adminlogin";
 		UpdatorVO updatorVO=new UpdatorVO();
-		updator_name=updator_name+adminVO.getAdmin_name();
+		UpdatorVO updatorVO1=new UpdatorVO();
+		updatorVO.setCarrot_seq(carrotVO.getCarrot_seq());
+		updator_name=updator_name+","+adminVO.getAdmin_name();
+		updatorVO.setUpdator_name(updator_name);
 		sqlSessionTemplate.update("updator.updateUpdator",updatorVO);
 		sqlSessionTemplate.update("carrot.updateCarrot",carrotVO);
-		model.addAttribute("updatorList",updator_name);
+		updatorVO1=carrotService.getUpdator(carrotVO.getCarrot_seq());
+		model.addAttribute("updatorList",updatorVO1);
 		System.out.println(updator_name);
 		return "redirect:/carrotList.mdo?student_parentnumber="+carrot_number1;
 	}

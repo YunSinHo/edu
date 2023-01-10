@@ -389,7 +389,7 @@
                         </div>
                         <div class="card-body">
 <input type="button" value="당근 등록하기" onclick="location.href='sendcarrot.mdo?student_parentnumber=${studentList.student_parentnumber}'">
-                    	<input type="button">
+                    	<input type="button" onclick="location.href='sendSMS.mdo'" value="문자전송">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="text-align: center; vertical-align:middle;">
                                     <thead>
