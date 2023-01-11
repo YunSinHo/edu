@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/main/webapp/WEB-INF/page/admin/views/Message/AutoDeny.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/page/admin/views/Message/SearchResult.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/page/admin/views/Message/SenderNumber.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/page/admin/views/Message/SentMessage.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/page/admin/views/Message/exception.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/page/admin/views/Message/getChargeInfo.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/page/admin/views/Message/index.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/page/admin/views/Message/indexMain.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/page/admin/views/Message/response.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/page/admin/views/Message/result.jsp=UTF-8

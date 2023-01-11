@@ -85,10 +85,12 @@
 		base-package="com.docedu.web"></context:component-scan>
 
     <util:properties id="EXAMPLE_CONFIG">
+    <prop key="TestCorpNum">8782401219</prop>
+        <prop key="TestUserID">mallrege</prop>
         <!-- 링크아이디 -->
-        <prop key="LinkID">TESTER</prop>
+        <prop key="LinkID">LEADERS</prop>
         <!-- 비밀키 -->
-        <prop key="SecretKey">SwWxqU+0TErBXy/9TVjIPEnI0VTUMMSQZtJf3Ed8q3I=</prop>
+        <prop key="SecretKey">eLUPf1ezUg6CX9bQWUMG5Rwzqa3QZANCzVXwHewDtSM=</prop>
         <!-- 연동환경 설정값 true(개발용), false(상업용) -->
         <prop key="IsTest">true</prop>
         <!-- 인증토큰 아이피 제한 기능 사용여부 권장(true) -->
