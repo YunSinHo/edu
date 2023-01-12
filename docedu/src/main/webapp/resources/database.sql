@@ -23,7 +23,18 @@ grammar_viewmoretext3 varchar(300) null,
 grammar_viewmoretext4 varchar(300) null,
 primary key(grammar_seq)
 );
+insert into grammartable(grammar_title ,
+grammar_category1 ,
+grammar_content1,
+grammar_viewmoretext1 ,
+grammar_viewmoretext2,
+grammar_category2 ,
+grammar_content2 ,
+grammar_viewmoretext3  ,
+grammar_viewmoretext4 )
+value ('1','1','1','1','1','1','1','1','1')
 독해
+select * from wordpdf
 단어구구단
 create table wordpdf(
 wpdf_header varchar(10) not null,
@@ -32,6 +43,7 @@ wpdf_name varchar(50) not null,
 wpdf_trans varchar(100) not null,
 primary key(wpdf_seq)
 );
+insert into wordpdf(wpdf_header,wpdf_name,wpdf_trans) values ('1','1','1')
 영작
 create table trans_table(
 	trans_seq int not null auto_increment,
@@ -50,6 +62,7 @@ create table trans_table(
 	trans_translate3 varchar(1000) not null,
 	primary key(trans_seq)
 );
+insert into trans_table values(1,'1','1','1','1','1','1','1','1','1','1','1','1','1')
 당근라이브러리
 create table carrot_table(
 	carrot_seq int auto_increment,
@@ -241,6 +254,7 @@ create table lecture_table(
     lecture_link varchar(400) not null,
     primary key(lecture_seq)
 );
+insert into lecture_table values(1,'1','1')
 
 업무 보고(미완)
 create table adminwork_table(
@@ -321,7 +335,7 @@ create table arrangementresult(
     arr_totalscore float not null,
     primary key(arr_id)
 );
-
+select * from wordcollection
 
 
 insert into wordcollection (word_name, word_trans, word_difficulty)

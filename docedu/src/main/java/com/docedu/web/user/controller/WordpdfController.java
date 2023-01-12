@@ -35,12 +35,11 @@ public class WordpdfController {
 	public WordpdfController(WordpdfService wordpdfService) {
 		this.wordpdfService = wordpdfService;
 	}
-	
-	@GetMapping("wordinsert.do")
+	@GetMapping("/wordinsert.do")
 	public String wordinsertGet() {
 		return "wordinsert";
 	}
-	@GetMapping("wordpdflist.do")
+	@GetMapping("/wordpdflist.do")
 	public ModelAndView wordpdflistGet(Model model) throws Exception {
 		ModelAndView mav = new ModelAndView();
 		Criteria Criteria = null;

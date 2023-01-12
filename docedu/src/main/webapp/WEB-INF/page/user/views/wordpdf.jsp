@@ -145,7 +145,7 @@
 	</table>
     <div class="imgarea">
         <div class="mainimg">
-            <img class="mainimg1" alt="img1" src="/resources/img/user/단어pdf1-1.png">
+            <img class="mainimg1" alt="img1" src="resources/img/user/단어pdf1-1.png">
         </div>
         <div class="headnamearea">
             <span id="headname1"></span>
@@ -153,7 +153,7 @@
     </div>
     <div class="imgarea">
         <div class="mainimg">
-            <img class="mainimg2" src="/resources/img/user/단어pdf1-2.png">
+            <img class="mainimg2" src="resources/img/user/단어pdf1-2.png">
         </div>
         <div class="namearea">
             <span class='topname'></span>
@@ -191,7 +191,7 @@
     <div id="copy_type"></div>
     <div class="imgarea">
         <div class="mainimg">
-            <img class="mainimg3" alt="img3" src="/resources/img/user/단어pdf3.png">
+            <img class="mainimg3" alt="img3" src="resources/img/user/단어pdf3.png">
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
@@ -216,7 +216,7 @@
             var m = 30;
             var copy = "<div class='imgarea'>\
 		                <div class='mainimg'>\
-		            <img class='mainimg2' src='/resources/img/user/단어pdf1-2.png'>\
+		            <img class='mainimg2' src='resources/img/user/단어pdf1-2.png'>\
 		        </div>\
 		        <div class='namearea'>\
 		            <span class='topname'></span>\
