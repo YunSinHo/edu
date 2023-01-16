@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.docedu.web.user.dao.WordpdfDAO;
-import com.docedu.web.user.vo.Criteria;
-import com.docedu.web.user.vo.WordpdfVO;
+import com.docedu.web.user.vo.WordcollectionVO;
+import com.docedu.web.user.vo.WordgugudanVO;
 
 @Service
 public class WordpdfServiceImpl implements WordpdfService{
@@ -15,12 +15,36 @@ public class WordpdfServiceImpl implements WordpdfService{
 	private WordpdfDAO wordpdfDAO;
 	
 	@Override
-	public List<WordpdfVO> wordpdflist_page(Criteria cr) {
-		return wordpdfDAO.wordpdflist_page(cr);
+	public List<WordgugudanVO> wordpdflist_page() {
+		return wordpdfDAO.wordpdflist_page();
 	}
 
 	@Override
-	public List<Object> wordpdfread(String wpdf_header) {
-		return wordpdfDAO.wordpdfread(wpdf_header);
+	public List<WordcollectionVO> wordpdfread(int gugudan_level) {
+		return wordpdfDAO.wordpdfread(gugudan_level);
 	}
+
+	@Override
+	public WordgugudanVO getGugudan(String gugudan_name) {
+		return wordpdfDAO.getGugudan(gugudan_name);
+	}
+
+	@Override
+	public WordcollectionVO getMaxSeq(int gugudan_level) {
+		return wordpdfDAO.getMaxSeq(gugudan_level);
+	}
+
+	@Override
+	public List<WordcollectionVO> wordpdfread(int[] index) {
+		
+		return wordpdfDAO.wordpdfread( index);
+	}
+
+	@Override
+	public WordcollectionVO getMaxSeq1(int gugudan_level) {
+		// TODO Auto-generated method stub
+		return wordpdfDAO.getMaxSeq1(gugudan_level);
+	}
+
+	
 }

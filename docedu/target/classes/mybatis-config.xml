@@ -23,6 +23,7 @@
 		<typeAlias alias="WordcollectionVO" type="com.docedu.web.user.vo.WordcollectionVO"/>
 		<typeAlias alias="StudentVO" type="com.docedu.web.admin.vo.StudentVO"/>
 		<typeAlias alias="UpdatorVO" type="com.docedu.web.admin.vo.UpdatorVO"/>
+		<typeAlias alias="WordgugudanVO" type="com.docedu.web.user.vo.WordgugudanVO"/>
 	</typeAliases>
 	
 	<mappers>

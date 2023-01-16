@@ -14,8 +14,8 @@
 		</tr>
 		<c:forEach var="list" items="${WordpdfList}" varStatus="status">
 			<tr>
-				<td onclick="location.href='wordpdf.do?wpdf_header=${list.wpdf_header}'">
-					<c:out value="${list.wpdf_header}" />
+				<td onclick="location.href='wordpdf.do?gugudan_name=${list.gugudan_name}'">
+					<c:out value="${list.gugudan_name}" />
 				</td>
 			</tr>
 		</c:forEach>
@@ -26,8 +26,8 @@
 		</tr>
 		<c:forEach var="list" items="${WordpdfList}" varStatus="status">
 			<tr>
-				<td onclick="location.href='wordpdftest.do?wpdf_header=${list.wpdf_header}'">
-					<c:out value="${list.wpdf_header}" />
+				<td onclick="location.href='wordpdftest.do?gugudan_name=${list.gugudan_name}'">
+					<c:out value="${list.gugudan_name}" />
 				</td>
 			</tr>
 		</c:forEach>

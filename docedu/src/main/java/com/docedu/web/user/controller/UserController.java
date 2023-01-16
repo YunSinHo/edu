@@ -23,7 +23,7 @@ public class UserController {
 	public UserController(UserService userService) {
 		this.userService = userService;
 	}
-	@GetMapping("userlogin.do")
+	@GetMapping("/userlogin.do")
 	public String userloginGet() {
 		return "userlogin";
 	}

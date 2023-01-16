@@ -75,3 +75,17 @@ insert into carrot_table(carrot_class, carrot_seq,
    insert into updator(updator_name) values('');
    select * from updator
    ALTER TABLE updator AUTO_INCREMENT = 1; 
+   insert into wordgugudan values('1단',1);
+   insert into wordgugudan values('2단',2);
+   insert into wordgugudan values('3단',3);
+   insert into wordgugudan values('4단',4);
+   insert into wordgugudan values('5단',5);
+   insert into wordgugudan values('6단',6);
+   insert into wordgugudan values('7단',7);
+   insert into wordgugudan values('8단',8);
+   insert into wordgugudan values('9단',9);
+   select * from wordgugudan
+   select * from wordcollection where word_difficulty=2  order by word_seq desc limit 1;
+   select count(*) from wordcollection where word_difficulty=2
+   select * from wordcollection where word_name='big'
+   select word_seq from wordcollection where word_difficulty =2 order by word_seq desc limit 1;

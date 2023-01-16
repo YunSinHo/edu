@@ -10,10 +10,29 @@
 			(#{item.wpdf_header},#{item.wpdf_name},#{item.wpdf_trans})
 		</foreach>
 	</insert>
-	<select id="wordpdfview" resultType="com.docedu.web.user.vo.WordpdfVO">
-		select * from wordpdf Where wpdf_header = #{wpdf_header};
+	<select id="wordpdfview" resultType="com.docedu.web.user.vo.WordcollectionVO" parameterType="int">
+		select * from wordcollection Where  word_difficulty= #{gugudan_level};
 	</select>
-	<select id="wordpdfviewList" resultType="com.docedu.web.user.vo.WordpdfVO">
-		select distinct wpdf_header from wordpdf;
+	<select id="wordpdfviewList" resultType="com.docedu.web.user.vo.WordgugudanVO">
+		select * from wordgugudan;
 	</select>
+	
+	<select id ="getGugudan" resultType="com.docedu.web.user.vo.WordgugudanVO" parameterType="String">
+		select * from wordgugudan where gugudan_name=#{gugudan_name}
+	</select>
+	
+	<select id="getMaxSeq" resultType="com.docedu.web.user.vo.WordcollectionVO" parameterType="int">
+		select * from wordcollection where word_difficulty= #{gugudan_level} order by word_seq desc limit 1;
+	</select>
+	<select id="getMaxSeq1" resultType="com.docedu.web.user.vo.WordcollectionVO" parameterType="int">
+		select * from wordcollection where word_difficulty= #{gugudan_level} order by word_seq desc limit 1;
+	</select>
+	<select id="wordpdfviewrandom" resultType="com.docedu.web.user.vo.WordcollectionVO" >
+		select * from wordcollection Where  word_seq in
+		<foreach collection="array" item="arr" open="(" close=")" separator=",">
+ #{arr}
+</foreach>
+	</select>
+	
+	
 </mapper>

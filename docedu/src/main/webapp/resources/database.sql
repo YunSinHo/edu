@@ -43,7 +43,11 @@ wpdf_name varchar(50) not null,
 wpdf_trans varchar(100) not null,
 primary key(wpdf_seq)
 );
+create table wordgugudan(
+gugudan_name varchar(20),
+gugudan_level int(3) );
 insert into wordpdf(wpdf_header,wpdf_name,wpdf_trans) values ('1','1','1')
+insert into wordpdf(wpdf_header,wpdf_name,wpdf_trans) values ('2단','1','1')
 영작
 create table trans_table(
 	trans_seq int not null auto_increment,

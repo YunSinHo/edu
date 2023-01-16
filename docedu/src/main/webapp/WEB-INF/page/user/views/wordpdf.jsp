@@ -137,15 +137,15 @@
 		</thead>
 		<c:forEach var="list" items="${wpdf_view}" varStatus="status">
 			<tr>
-				<td><c:out value="${list.wpdf_header}" /></td>
-				<td><c:out value="${list.wpdf_name}" /></td>
-				<td><c:out value="${list.wpdf_trans}" /></td>
+			<td><c:out value="${list.word_seq}" /></td>
+				<td><c:out value="${list.word_name}" /></td>
+				<td><c:out value="${list.word_trans}" /></td>
 			</tr>
 		</c:forEach>
 	</table>
     <div class="imgarea">
         <div class="mainimg">
-            <img class="mainimg1" alt="img1" src="resources/img/user/단어pdf1-1.png">
+            <img class="mainimg1" alt="img1" src="resources/img/user/001단어.png">
         </div>
         <div class="headnamearea">
             <span id="headname1"></span>
@@ -153,7 +153,7 @@
     </div>
     <div class="imgarea">
         <div class="mainimg">
-            <img class="mainimg2" src="resources/img/user/단어pdf1-2.png">
+            <img class="mainimg2" src="resources/img/user/002단어.png">
         </div>
         <div class="namearea">
             <span class='topname'></span>
@@ -189,11 +189,6 @@
         </div>
     </div>
     <div id="copy_type"></div>
-    <div class="imgarea">
-        <div class="mainimg">
-            <img class="mainimg3" alt="img3" src="resources/img/user/단어pdf3.png">
-        </div>
-    </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
     <script>
@@ -216,7 +211,7 @@
             var m = 30;
             var copy = "<div class='imgarea'>\
 		                <div class='mainimg'>\
-		            <img class='mainimg2' src='resources/img/user/단어pdf1-2.png'>\
+		            <img class='mainimg2' src='resources/img/user/002단어.png'>\
 		        </div>\
 		        <div class='namearea'>\
 		            <span class='topname'></span>\
